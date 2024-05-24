@@ -2,6 +2,8 @@
 
 // prelevo il contenuto del file .json e lo salvo nella variabile
 // $list_disc_string
+// file_get_contents() (funzione PHP) legge un intero file e ne restituisce 
+// il contenuto sotto forma di stringa
 $list_disc_string = file_get_contents("dischi.json"); // stringa
 
 // Trasformo la stringa in un array
@@ -22,5 +24,6 @@ $dischi = [
 
 // ritrasformiamo l'array strutturato da noi in stringa json per inviarlo a front and
 $json_list_disc = json_encode($dischi); // stringa 
+// Avvisa il server dell arrivo di dati di tipo json e serve ad impostare la comunicazione http 
 header("Content_type: application/json");
 echo $json_list_disc;
