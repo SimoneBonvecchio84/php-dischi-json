@@ -3,8 +3,7 @@ const { createApp } = Vue;
 createApp ({
     data() {
         return {
-            dischi: [],
-            
+            dischi: [],   
         }
     },
     created() {
@@ -16,5 +15,4 @@ createApp ({
             console.log(this.dischi)
           });
     }
-
 }).mount("#app");

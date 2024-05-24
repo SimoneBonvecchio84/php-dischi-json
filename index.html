@@ -21,11 +21,11 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="d-flex">
         
         <div class="container py-5">
-            <div class="row gap-3">
-                <div class="col-3" v-for="curDischi in dischi">
+            <div class="row d-flex justify-content-between">
+                <div class="col-4 py-2" v-for="curDischi in dischi">
                     <div class="card">
                         <div class="card-body text-center">
                             <img class="rounded w-75":src="curDischi.poster" alt="">
