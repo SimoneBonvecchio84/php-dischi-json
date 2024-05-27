@@ -13,3 +13,7 @@ body {
 .card {
     background-color:rgb(17 32 48) ;
 }
+
+button {
+    background: none;
+}

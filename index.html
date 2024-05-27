@@ -39,25 +39,45 @@
                     <a class="navbar-brand px-5 " href="#">
                         <i class="fa-brands fa-spotify fs-1 px-5"></i>
                     </a>
+                    <span @click.prevent="preferiti()">
+                        <a href="">Visualizza Preferiti</a>
+                    </span>
+                    <span @click.prevent="vediTutti()">
+                        <a href="">Visualizza Tutti</a>
+                    </span>
                 </div>
             </nav>
 
         </div>
         <div class="container py-5">
             <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 d-flex justify-content-between">
-                <div class="col-4 py-2" v-for="curDischi in dischi">
+                <div class="col-4 py-2" v-for="(curDischi, index) in dischi">
                     <div class="card">
                         <div class="card-body text-center text-light">
                             <img class="rounded w-75" :src="curDischi.poster" alt="">
-                            <h5 class="card-title text-center py-3">
+                            <h6 class="card-title text-center py-3">
                                 {{ curDischi.title }}
-                            </h5>
+                            </h6>
                             <h6 class="card-title text-center">
                                 {{ curDischi.author }}
                             </h6>
                             <p class="card-text text-center py-2">
                                 {{ curDischi.year }}
                             </p>
+                            <div>
+                                <button @click="likeDisc(index)">
+                                    <!-- 
+                                        richiamo la nuova chiave aggiunta con il for in server.php 
+                                        disc_like e aggiungo il valore true di default
+                                    -->
+                                    <span v-if="curDischi.disc_like == true" >
+                                        <i class="fa-solid fa-heart text-success" ></i>
+                                    </span>
+                                    <span v-else>
+                                        <i class="fa-regular fa-heart text-light"></i>    
+                                    </span>
+                                </button>
+                            </div>
 
                         </div>
                     </div>

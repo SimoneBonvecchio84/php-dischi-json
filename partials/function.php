@@ -11,7 +11,7 @@
     e restituisce tramite json_decode un array associativo
 */ 
 function get_data() {
-    $file_to_string = file_get_contents("dischi.json");
+    $file_to_string = file_get_contents("dischi.json"); // string
     return json_decode($file_to_string, true);
 }
 
